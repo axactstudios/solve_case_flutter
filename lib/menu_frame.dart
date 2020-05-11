@@ -70,17 +70,17 @@ class MenuFrame extends StatelessWidget {
             ),
           ),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color.fromRGBO(255, 89, 89, 1.0),
-                Color.fromRGBO(133, 113, 255, 1.0),
-              ],
-            ),
+            color: Color.fromARGB(255, 30, 30, 30),
           ),
         ),
       ),
     );
   }
 }
+//gradient: LinearGradient(
+//begin: Alignment.topCenter,
+//end: Alignment.bottomCenter,
+//colors: [
+//Color.fromRGBO(255, 89, 89, 1.0),
+//Color.fromRGBO(133, 113, 255, 1.0),
+//],

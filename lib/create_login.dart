@@ -88,12 +88,19 @@ class _CreateLoginState extends State<CreateLogin> {
               Container(
                 padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 34.0),
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Color.fromRGBO(255, 89, 89, 1.0),
+                        Color.fromRGBO(133, 113, 255, 1.0),
+                      ],
+                    ),
                     borderRadius: BorderRadius.circular(30.0)),
                 child: Text(
                   'SAVE',
                   style: TextStyle(
-                      color: Colors.redAccent,
+                      color: Colors.white,
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold),
                 ),

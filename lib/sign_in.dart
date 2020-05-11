@@ -61,11 +61,19 @@ class _SignInState extends State<SignIn> {
             width: double.infinity,
             padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 34.0),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(30.0)),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromRGBO(255, 89, 89, 1.0),
+                    Color.fromRGBO(133, 113, 255, 1.0),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(30.0)),
             child: Text(
               'LOG IN',
               style: TextStyle(
-                color: Colors.redAccent,
+                color: Colors.white,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -78,10 +86,18 @@ class _SignInState extends State<SignIn> {
           Container(
             padding: EdgeInsets.all(20.0),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(30.0)),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromRGBO(255, 89, 89, 1.0),
+                    Color.fromRGBO(133, 113, 255, 1.0),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(30.0)),
             child: Icon(
               FontAwesomeIcons.google,
-              color: Colors.redAccent,
+              color: Colors.white,
             ),
           ),
           SizedBox(
@@ -102,11 +118,19 @@ class _SignInState extends State<SignIn> {
             width: double.infinity,
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 34.0),
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(30.0)),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromRGBO(255, 89, 89, 1.0),
+                    Color.fromRGBO(133, 113, 255, 1.0),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(30.0)),
             child: Text(
               'Don\'t have an account?',
               style: TextStyle(
-                color: Colors.redAccent,
+                color: Colors.white,
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
