@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget with NavigationStates {
         child: Text(
           'Home Page',
           style: TextStyle(
+            //TODO: make home page
             fontWeight: FontWeight.w500,
             fontSize: 30,
           ),
