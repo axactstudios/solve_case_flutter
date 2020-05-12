@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:solvecaseflutter/sidebar/sidebar_layout.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -19,9 +20,12 @@ class _SignInState extends State<SignIn> {
         .signInWithEmailAndPassword(email: email, password: pw)
         .then((authResult) {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return Container(
-          color: Colors.yellow,
-          child: Text('Welcome ${authResult.user.email}'),
+        return new MaterialApp(
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
+            primaryColor: Colors.white,
+          ),
+          home: SideBarLayout(),
         );
       }));
     }).catchError(
