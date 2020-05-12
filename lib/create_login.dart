@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:solvecaseflutter/sidebar/sidebar_layout.dart';
 
 class CreateLogin extends StatefulWidget {
   @override
@@ -17,11 +18,13 @@ class _CreateLoginState extends State<CreateLogin> {
     _auth
         .createUserWithEmailAndPassword(email: email, password: pw)
         .then((authResult) {
-          //TODO
       Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return Container(
-          color: Colors.redAccent,
-          child: Text('Welcome ${authResult.user.email}'),
+        return new MaterialApp(
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
+            primaryColor: Colors.white,
+          ),
+          home: SideBarLayout(),
         );
       }));
     }).catchError((err) {
