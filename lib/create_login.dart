@@ -19,7 +19,7 @@ class _CreateLoginState extends State<CreateLogin> {
         .then((authResult) {
       Navigator.push(context, MaterialPageRoute(builder: (context) {
         return Container(
-          color: Colors.yellow,
+          color: Colors.redAccent,
           child: Text('Welcome ${authResult.user.email}'),
         );
       }));
