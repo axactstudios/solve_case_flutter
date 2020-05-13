@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../bloc.navigation_bloc/navigation_bloc.dart';
@@ -70,7 +71,7 @@ class _SideBarState extends State<SideBar>
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
-                  color: const Color(0xFF262AAA),
+                  color: const Color.fromARGB(255, 30, 30, 30),
                   child: Column(
                     children: <Widget>[
                       SizedBox(
@@ -78,7 +79,7 @@ class _SideBarState extends State<SideBar>
                       ),
                       ListTile(
                         title: Text(
-                          "Aviral",
+                          "solve-case",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 30,
@@ -87,17 +88,17 @@ class _SideBarState extends State<SideBar>
                         subtitle: Text(
                           "axactstudios@gmail.com",
                           style: TextStyle(
-                            color: Color(0xFF1BB5FD),
+                            color: Color.fromRGBO(133, 113, 255, 1.0),
                             fontSize: 18,
                           ),
                         ),
-                        leading: CircleAvatar(
-                          child: Icon(
-                            Icons.perm_identity,
-                            color: Colors.white,
-                          ),
-                          radius: 40,
-                        ),
+//                        leading: CircleAvatar(
+//                          child: Icon(
+//                            Icons.perm_identity,
+//                            color: Colors.white,
+//                          ),
+//                          radius: 40,
+//                        ),
                       ),
                       Divider(
                         height: 64,
@@ -107,7 +108,7 @@ class _SideBarState extends State<SideBar>
                         endIndent: 32,
                       ),
                       MenuItem(
-                        icon: Icons.home,
+                        icon: FontAwesomeIcons.home,
                         title: "Home",
                         onTap: () {
                           onIconPressed();
@@ -116,7 +117,7 @@ class _SideBarState extends State<SideBar>
                         },
                       ),
                       MenuItem(
-                        icon: Icons.video_library,
+                        icon: FontAwesomeIcons.youtubeSquare,
                         title: "Video Lectures",
                         onTap: () {
                           onIconPressed();
@@ -125,7 +126,7 @@ class _SideBarState extends State<SideBar>
                         },
                       ),
                       MenuItem(
-                        icon: Icons.library_books,
+                        icon: FontAwesomeIcons.book,
                         title: "Study Material",
                         onTap: () {
                           onIconPressed();
@@ -139,8 +140,17 @@ class _SideBarState extends State<SideBar>
 //                      ),
 
                       MenuItem(
-                        icon: Icons.developer_mode,
-                        title: "Top Contricutors",
+                        icon: FontAwesomeIcons.handsHelping,
+                        title: "Top Contributors",
+                        onTap: () {
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context).add(
+                              NavigationEvents.TopContributorsClickedEvent);
+                        },
+                      ),
+                      MenuItem(
+                        icon: FontAwesomeIcons.share,
+                        title: "Share",
                         onTap: () {
                           onIconPressed();
                           BlocProvider.of<NavigationBloc>(context).add(
@@ -155,7 +165,7 @@ class _SideBarState extends State<SideBar>
                         endIndent: 32,
                       ),
                       MenuItem(
-                        icon: Icons.library_books,
+                        icon: FontAwesomeIcons.whatsapp,
                         title: "Contact Us",
                         onTap: () {
                           onIconPressed();
@@ -164,7 +174,7 @@ class _SideBarState extends State<SideBar>
                         },
                       ),
                       MenuItem(
-                        icon: Icons.library_books,
+                        icon: FontAwesomeIcons.code,
                         title: "Developed By",
                         onTap: () {
                           onIconPressed();
@@ -177,7 +187,7 @@ class _SideBarState extends State<SideBar>
                 ),
               ),
               Align(
-                alignment: Alignment(0, -0.9),
+                alignment: Alignment(0, -0.93),
                 child: GestureDetector(
                   onTap: () {
                     onIconPressed();
@@ -187,12 +197,12 @@ class _SideBarState extends State<SideBar>
                     child: Container(
                       width: 35,
                       height: 110,
-                      color: Color(0xFF262AAA),
+                      color: Colors.black87,
                       alignment: Alignment.centerLeft,
                       child: AnimatedIcon(
                         progress: _animationController.view,
                         icon: AnimatedIcons.menu_close,
-                        color: Color(0xFF1BB5FD),
+                        color: Color.fromRGBO(133, 113, 255, 1.0),
                         size: 25,
                       ),
                     ),

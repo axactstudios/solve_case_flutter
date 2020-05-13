@@ -18,7 +18,7 @@ class _CreateLoginState extends State<CreateLogin> {
     _auth
         .createUserWithEmailAndPassword(email: email, password: pw)
         .then((authResult) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return new MaterialApp(
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,

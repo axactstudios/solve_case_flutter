@@ -44,6 +44,7 @@ class HomePage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 30, 30, 30),
       appBar: MainAppBar(
         layoutGroup: layoutGroup,
         layoutType: LayoutType.nested,
@@ -68,11 +69,11 @@ class HomePage extends StatelessWidget
 
   Widget _buildHorizontalList({int parentIndex}) {
     var colors = [
-      Colors.green,
-      Colors.blue,
-      Colors.indigo,
-      Colors.red,
-      Colors.orange
+      Colors.black87,
+      Colors.black87,
+      Colors.black87,
+      Colors.black87,
+      Colors.black87
     ];
     double height = 515.0;
     double width = 289.0;
@@ -107,20 +108,20 @@ class HomePage extends StatelessWidget
             }),
       );
     } else {
-      return SizedBox(
-        height: height,
-        child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 5,
-            itemBuilder: (BuildContext content, int index) {
-              return _buildItem3(
-                index: index + 1,
-                color: colors[(parentIndex + index) % colors.length],
-                parentHeight: height,
-                parentWidth: width,
-              );
-            }),
-      );
+//      return SizedBox(
+//        height: height,
+//        child: ListView.builder(
+//            scrollDirection: Axis.horizontal,
+//            itemCount: 5,
+//            itemBuilder: (BuildContext content, int index) {
+//              return _buildItem3(
+//                index: index + 1,
+//                color: colors[(parentIndex + index) % colors.length],
+//                parentHeight: height,
+//                parentWidth: width,
+//              );
+//            }),
+//      );
     }
   }
 
@@ -141,42 +142,66 @@ class HomePage extends StatelessWidget
     } else if (index == 5) {
       subject = "Workshop";
     }
-    return Container(
-      padding: EdgeInsets.all(edgeSize),
-      child: SizedBox(
-        width: itemWidth,
-        height: itemHeight,
-        child: Container(
-          alignment: AlignmentDirectional.center,
-          color: color,
-          child: Column(
-            children: <Widget>[
-              Container(
-                color: Colors.yellow,
-                width: parentWidth,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  child: Text(
-                    'First Year',
-                    style: TextStyle(fontSize: 30.0, color: Colors.white),
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+      color: Colors.black54,
+      child: Container(
+        padding: EdgeInsets.all(edgeSize),
+        child: SizedBox(
+          width: itemWidth,
+          height: itemHeight,
+          child: Container(
+            alignment: AlignmentDirectional.center,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromRGBO(255, 89, 89, 1.0),
+                    Color.fromRGBO(133, 113, 255, 1.0),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(25.0)),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(25.0),
+                          topRight: Radius.circular(25.0))),
+                  width: parentWidth,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+                    child: Text(
+                      'First Year',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 30.0, color: Colors.white),
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                color: Colors.deepPurple,
-                width: parentWidth,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(16, 5, 16, 5),
-                  child: Text(
-                    '$subject',
-                    style: TextStyle(fontSize: 15.0, color: Colors.white),
+//                SizedBox(
+//                  height: 10.0,
+//                ),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(25.0),
+                          bottomRight: Radius.circular(25.0))),
+                  width: parentWidth,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 5, 16, 5),
+                    child: Text(
+                      '$subject',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                    ),
                   ),
                 ),
-              ),
 //              Container(
 //                child: _buildContactList(),
 //              )
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -189,54 +214,64 @@ class HomePage extends StatelessWidget
     double itemWidth = parentWidth - edgeSize * 2.0;
     double itemHeight = parentHeight - edgeSize * 2.0;
 
-    return Container(
-      padding: EdgeInsets.all(edgeSize),
-      child: SizedBox(
-        width: itemWidth,
-        height: itemHeight,
-        child: Container(
-          alignment: AlignmentDirectional.center,
-          color: color,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              Text(
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+      color: Colors.black54,
+      child: Container(
+        padding: EdgeInsets.all(edgeSize),
+        child: SizedBox(
+          width: itemWidth,
+          height: itemHeight,
+          child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromRGBO(255, 89, 89, 1.0),
+                    Color.fromRGBO(133, 113, 255, 1.0),
+                  ],
+                ),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.0),
+                    topRight: Radius.circular(25.0))),
+            width: parentWidth,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+              child: Text(
                 'Second Year',
+                textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 30.0, color: Colors.white),
               ),
-              Text(
-                'Second Year',
-                style: TextStyle(fontSize: 30.0, color: Colors.white),
-              ),
-            ],
+            ),
           ),
         ),
       ),
     );
   }
 
-  Widget _buildItem3(
-      {int index, Color color, double parentHeight, double parentWidth}) {
-    double edgeSize = 18.0;
-    double itemWidth = parentWidth - edgeSize * 2.0;
-    double itemHeight = parentHeight - edgeSize * 2.0;
-
-    return Container(
-      padding: EdgeInsets.all(edgeSize),
-      child: SizedBox(
-        width: itemWidth,
-        height: itemHeight,
-        child: Container(
-          alignment: AlignmentDirectional.center,
-          color: color,
-          child: Text(
-            'Third Year',
-            style: TextStyle(fontSize: 72.0, color: Colors.white),
-          ),
-        ),
-      ),
-    );
-  }
+//  Widget _buildItem3(
+//      {int index, Color color, double parentHeight, double parentWidth}) {
+//    double edgeSize = 18.0;
+//    double itemWidth = parentWidth - edgeSize * 2.0;
+//    double itemHeight = parentHeight - edgeSize * 2.0;
+//
+//    return Container(
+//      padding: EdgeInsets.all(edgeSize),
+//      child: SizedBox(
+//        width: itemWidth,
+//        height: itemHeight,
+//        child: Container(
+//          alignment: AlignmentDirectional.center,
+//          color: color,
+//          child: Text(
+//            'Coming Soon',
+//            style: TextStyle(fontSize: 72.0, color: Colors.white),
+//          ),
+//        ),
+//      ),
+//    );
+//  }
 
 //  Widget _buildContactList() {
 //    return ListView.builder(
