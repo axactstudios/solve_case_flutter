@@ -19,12 +19,8 @@ class _SignInState extends State<SignIn> {
     _auth
         .signInWithEmailAndPassword(email: email, password: pw)
         .then((authResult) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) {
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return new MaterialApp(
-          theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-            primaryColor: Colors.white,
-          ),
           home: SideBarLayout(),
         );
       }));
@@ -51,21 +47,41 @@ class _SignInState extends State<SignIn> {
         }
         if (err.code == 'ERROR_WRONG_PASSWORD') {
           showCupertinoDialog(
-              context: context,
-              builder: (context) {
-                return CupertinoAlertDialog(
-                  title: Text(
-                      'Password is incorrect. Please enter correct password.'),
-                  actions: <Widget>[
-                    CupertinoDialogAction(
-                      child: Text('OK'),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                    )
-                  ],
-                );
-              });
+            context: context,
+            builder: (context) {
+              return CupertinoAlertDialog(
+                title: Text(
+                    'Password is incorrect. Please enter correct password.'),
+                actions: <Widget>[
+                  CupertinoDialogAction(
+                    child: Text('OK'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  )
+                ],
+              );
+            },
+          );
+        }
+        if (err.code == 'ERROR_NETWORK_REQUEST_FAILED') {
+          showCupertinoDialog(
+            context: context,
+            builder: (context) {
+              return CupertinoAlertDialog(
+                title: Text(
+                    'Your internet connection is either not available or too slow.'),
+                actions: <Widget>[
+                  CupertinoDialogAction(
+                    child: Text('OK'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  )
+                ],
+              );
+            },
+          );
         }
       },
     );

@@ -55,7 +55,10 @@ class _SideBarState extends State<SideBar>
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-
+    Theme(
+      data: Theme.of(context),
+      child: FloatingActionButton(onPressed: null),
+    );
     return StreamBuilder<bool>(
       initialData: false,
       stream: isSidebarOpenedStream,

@@ -69,9 +69,7 @@ class MenuFrame extends StatelessWidget {
               ),
             ),
           ),
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 30, 30, 30),
-          ),
+          decoration: BoxDecoration(color: Theme.of(context).primaryColor),
         ),
       ),
     );

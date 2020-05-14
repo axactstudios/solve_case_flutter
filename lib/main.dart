@@ -37,7 +37,10 @@ class AfterSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.white,
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
+        primaryColor: Color.fromARGB(255, 30, 30, 30),
+        accentColor: Color.fromRGBO(133, 113, 255, 1.0),
       ),
       home: MenuFrame(),
     );

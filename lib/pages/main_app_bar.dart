@@ -16,12 +16,15 @@ class MainAppBar extends AppBar {
             onPressed: onLayoutToggle,
           ),
           title: Text(
-            'Download solutions',
+            'Download Solutions',
             style: TextStyle(
-                fontWeight: FontWeight.w500, fontSize: 24, color: Colors.white),
+                fontWeight: FontWeight.w500,
+                fontSize: 30,
+                color: Colors.black87),
+            textAlign: TextAlign.right,
           ),
-          backgroundColor: Color.fromARGB(255, 30, 30, 30),
-          elevation: 1.0,
+          elevation: 0.0,
+          backgroundColor: Colors.white,
           bottom: bottom,
         );
 }

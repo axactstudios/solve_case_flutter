@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:solvecaseflutter/bloc.navigation_bloc/navigation_bloc.dart';
 import 'package:solvecaseflutter/layout_type.dart';
 
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 30, 30, 30),
+      backgroundColor: Colors.white,
       appBar: MainAppBar(
         layoutGroup: layoutGroup,
         layoutType: LayoutType.nested,
@@ -143,29 +144,22 @@ class HomePage extends StatelessWidget
       subject = "Workshop";
     }
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-      color: Colors.black54,
+      elevation: 30.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+      color: Colors.white,
       child: Container(
-        padding: EdgeInsets.all(edgeSize),
         child: SizedBox(
           width: itemWidth,
           height: itemHeight,
           child: Container(
             alignment: AlignmentDirectional.center,
             decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color.fromRGBO(255, 89, 89, 1.0),
-                    Color.fromRGBO(133, 113, 255, 1.0),
-                  ],
-                ),
-                borderRadius: BorderRadius.circular(25.0)),
+                color: Colors.white, borderRadius: BorderRadius.circular(25.0)),
             child: Column(
               children: <Widget>[
                 Container(
                   decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 250, 83, 87),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(25.0),
                           topRight: Radius.circular(25.0))),
@@ -174,7 +168,7 @@ class HomePage extends StatelessWidget
                     padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                     child: Text(
                       'First Year',
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 30.0, color: Colors.white),
                     ),
                   ),
@@ -183,17 +177,17 @@ class HomePage extends StatelessWidget
 //                  height: 10.0,
 //                ),
                 Container(
+                  padding: EdgeInsets.only(bottom: 10),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(25.0),
-                          bottomRight: Radius.circular(25.0))),
+                    color: Color.fromARGB(255, 250, 83, 87),
+                  ),
                   width: parentWidth,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(16, 5, 16, 5),
                     child: Text(
                       '$subject',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 15.0, color: Colors.white),
+                      textAlign: TextAlign.left,
+                      style: TextStyle(fontSize: 20.0, color: Colors.white),
                     ),
                   ),
                 ),
@@ -215,35 +209,33 @@ class HomePage extends StatelessWidget
     double itemHeight = parentHeight - edgeSize * 2.0;
 
     return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-      color: Colors.black54,
+      elevation: 30.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+      color: Colors.white,
       child: Container(
-        padding: EdgeInsets.all(edgeSize),
+        color: Colors.white,
         child: SizedBox(
           width: itemWidth,
           height: itemHeight,
-          child: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color.fromRGBO(255, 89, 89, 1.0),
-                    Color.fromRGBO(133, 113, 255, 1.0),
-                  ],
+          child: Column(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.redAccent,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(25.0),
+                        topRight: Radius.circular(25.0))),
+                width: itemWidth,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                  child: Text(
+                    'Second Year',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(fontSize: 26.0, color: Colors.white),
+                  ),
                 ),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25.0),
-                    topRight: Radius.circular(25.0))),
-            width: parentWidth,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-              child: Text(
-                'Second Year',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 30.0, color: Colors.white),
               ),
-            ),
+            ],
           ),
         ),
       ),
