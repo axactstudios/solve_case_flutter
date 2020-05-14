@@ -221,7 +221,7 @@ class HomePage extends StatelessWidget
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                    color: Colors.redAccent,
+                    color: Colors.green,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(25.0),
                         topRight: Radius.circular(25.0))),
