@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:solvecaseflutter/start.dart';
+
 import 'package:splashscreen/splashscreen.dart';
 import 'menu_frame.dart';
 
@@ -6,7 +8,7 @@ void main() {
   runApp(
     new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new MyApp(),
+      home: new Start(),
     ),
   );
 }

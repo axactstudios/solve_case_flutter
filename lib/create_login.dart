@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:solvecaseflutter/sidebar/sidebar_layout.dart';
+import 'package:solvecaseflutter/start.dart';
 
 class CreateLogin extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _CreateLoginState extends State<CreateLogin> {
             scaffoldBackgroundColor: Colors.white,
             primaryColor: Colors.white,
           ),
-          home: SideBarLayout(),
+          home: Start(),
         );
       }));
     }).catchError((err) {
