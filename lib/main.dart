@@ -44,7 +44,7 @@ class AfterSplash extends StatelessWidget {
         primaryColor: Color.fromARGB(255, 30, 30, 30),
         accentColor: Color.fromRGBO(133, 113, 255, 1.0),
       ),
-      home: MenuFrame(),
+      home: Start(),
     );
   }
 }
