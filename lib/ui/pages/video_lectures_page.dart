@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:solvecaseflutter/bloc/navigation_bloc/navigation_bloc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class VideoLecturesPage extends StatelessWidget with NavigationStates {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         appBarTheme: AppBarTheme(
-          color: Colors.blueAccent,
+          color: Colors.black87,
           textTheme: TextTheme(
             title: TextStyle(
               color: Colors.white,
@@ -117,17 +118,20 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black87,
       key: _scaffoldKey,
       appBar: AppBar(
         leading: Padding(
-          padding: const EdgeInsets.only(left: 12.0),
-          child: Image.asset(
-            'assets/ypf.png',
-            fit: BoxFit.fitWidth,
-          ),
-        ),
+            padding: const EdgeInsets.only(left: 12.0),
+            child: InkWell(
+                onTap: () {
+                  VideoLecturesPage().onMenuTap;
+                },
+                child: Icon(
+                  Icons.menu,
+                ))),
         title: Text(
-          'Youtube Player Flutter',
+          'Video Lectures',
           style: TextStyle(color: Colors.white),
         ),
         actions: [
@@ -147,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
           YoutubePlayer(
             controller: _controller,
             showVideoProgressIndicator: true,
-            progressIndicatorColor: Colors.blueAccent,
+            progressIndicatorColor: Colors.red,
             topActions: <Widget>[
               SizedBox(width: 8.0),
               Expanded(
@@ -191,8 +195,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 _space,
                 _text('Channel', _videoMetaData.author),
                 _space,
-                _text('Video Id', _videoMetaData.videoId),
-                _space,
                 Row(
                   children: [
                     _text(
@@ -207,38 +209,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 _space,
-                TextField(
-                  enabled: _isPlayerReady,
-                  controller: _idController,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Enter youtube \<video id\> or \<link\>',
-                    fillColor: Colors.blueAccent.withAlpha(20),
-                    filled: true,
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      color: Colors.blueAccent,
-                    ),
-                    suffixIcon: IconButton(
-                      icon: Icon(Icons.clear),
-                      onPressed: () => _idController.clear(),
-                    ),
-                  ),
-                ),
-                _space,
-                Row(
-                  children: [
-                    _loadCueButton('LOAD'),
-                    SizedBox(width: 10.0),
-                    _loadCueButton('CUE'),
-                  ],
-                ),
-                _space,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     IconButton(
-                      icon: Icon(Icons.skip_previous),
+                      icon: Icon(
+                        Icons.skip_previous,
+                        color: Colors.white,
+                      ),
                       onPressed: _isPlayerReady
                           ? () => _controller.load(_ids[
                               (_ids.indexOf(_controller.metadata.videoId) - 1) %
@@ -250,6 +228,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         _controller.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
+                        color: Colors.white,
                       ),
                       onPressed: _isPlayerReady
                           ? () {
@@ -261,7 +240,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           : null,
                     ),
                     IconButton(
-                      icon: Icon(_muted ? Icons.volume_off : Icons.volume_up),
+                      icon: Icon(
+                        _muted ? Icons.volume_off : Icons.volume_up,
+                        color: Colors.white,
+                      ),
                       onPressed: _isPlayerReady
                           ? () {
                               _muted
@@ -275,10 +257,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     FullScreenButton(
                       controller: _controller,
-                      color: Colors.blue,
+                      color: Colors.white,
                     ),
                     IconButton(
-                      icon: Icon(Icons.skip_next),
+                      icon: Icon(Icons.skip_next, color: Colors.white),
                       onPressed: _isPlayerReady
                           ? () => _controller.load(_ids[
                               (_ids.indexOf(_controller.metadata.videoId) + 1) %
@@ -326,7 +308,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     _playerState.toString(),
                     style: TextStyle(
                       fontWeight: FontWeight.w300,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                     textAlign: TextAlign.center,
                   ),

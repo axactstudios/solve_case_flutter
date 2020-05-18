@@ -70,7 +70,7 @@ class _DownloadsPageState extends State<DownloadsPage> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(40)),
-        color: Colors.white10,
+        color: Colors.white30,
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -135,42 +135,37 @@ class _DownloadsPageState extends State<DownloadsPage> {
                           color: Colors.white,
                           child: Column(
                             children: <Widget>[
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 8.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.redAccent,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(30),
-                                        topRight: Radius.circular(30)),
-                                  ),
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.redAccent,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(30),
+                                      topRight: Radius.circular(30)),
+                                ),
 
 //                                  double width : double.infinity ,
 
-                                  child: Padding(
-                                    padding: EdgeInsets.only(left: 20),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.stretch,
-                                      children: <Widget>[
-                                        Text(
-                                          'First Year',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 30),
-                                        ),
-                                        SizedBox(
-                                          height: 10.0,
-                                        ),
-                                        Text(
-                                          'Select Branch',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 20),
-                                        ),
-                                      ],
-                                    ),
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 20, top: 10, bottom: 10),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    children: <Widget>[
+                                      Text(
+                                        'First Year',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 30),
+                                      ),
+                                      SizedBox(
+                                        height: 10.0,
+                                      ),
+                                      Text(
+                                        'Select Branch',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 20),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
